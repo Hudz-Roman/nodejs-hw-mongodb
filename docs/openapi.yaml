@@ -1,0 +1,30 @@
+openapi: 3.1.0
+info:
+  version: 1.0.0
+  title: My ContactsApp
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  description: Keep all your essential contacts in one convenient and accessible place with My ContactsApp.
+tags:
+  - name: Contacts
+    description: Operations about contacts.
+  - name: Auth
+    description: Auth operations.
+servers:
+  - url: http://localhost:3000
+  - url: https://nodejs-hw-mongodb-3pno.onrender.com
+paths:
+  /contacts:
+    get:
+      $ref: ../swagger/paths/contacts/get.yaml
+    post:
+      $ref: ../swagger/paths/contacts/post.yaml
+  /contacts/{contactId}:
+    get:
+      $ref: ../swagger/paths/contactId/get.yaml
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
