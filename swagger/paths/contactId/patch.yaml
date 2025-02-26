@@ -17,10 +17,6 @@ requestBody:
     multipart/form-data:
       schema:
         type: object
-        required:
-          - name
-          - phoneNumber
-          - contactType
         properties:
           name:
             description: "Contact's name"
@@ -43,9 +39,9 @@ requestBody:
             type: string
             enum: ['work', 'home', 'personal']
           photo:
-            description: "Link to contact's photo"
+            description: "Upload contact's photo"
             type: string
-            example: https://res.cloudinary.com/uqwgdu/image/upload/image.png
+            format: binary
 responses:
   '200':
     description: 'Successfully updated contact'

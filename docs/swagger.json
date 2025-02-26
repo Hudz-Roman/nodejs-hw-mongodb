@@ -130,8 +130,7 @@
                 "required": [
                   "name",
                   "phoneNumber",
-                  "contactType",
-                  "userId"
+                  "contactType"
                 ],
                 "properties": {
                   "name": {
@@ -163,15 +162,10 @@
                       "personal"
                     ]
                   },
-                  "userId": {
-                    "description": "Contact's id",
-                    "type": "string",
-                    "example": "65e4decdd286b30065d54af9"
-                  },
                   "photo": {
-                    "description": "Link to contact's photo",
+                    "description": "Upload contact's photo",
                     "type": "string",
-                    "example": "https://res.cloudinary.com/uqwgdu/image/upload/image.png"
+                    "format": "binary"
                   }
                 }
               }
@@ -333,11 +327,6 @@
             "multipart/form-data": {
               "schema": {
                 "type": "object",
-                "required": [
-                  "name",
-                  "phoneNumber",
-                  "contactType"
-                ],
                 "properties": {
                   "name": {
                     "description": "Contact's name",
@@ -369,9 +358,9 @@
                     ]
                   },
                   "photo": {
-                    "description": "Link to contact's photo",
+                    "description": "Upload contact's photo",
                     "type": "string",
-                    "example": "https://res.cloudinary.com/uqwgdu/image/upload/image.png"
+                    "format": "binary"
                   }
                 }
               }
